@@ -8,7 +8,8 @@ final class SettingsStore: ObservableObject {
     @Published var scrollStep: Int
     @Published var smoothScroll: Bool
 
-    init(settings: AppSettings = .load()) {
+    init(settings: AppSettings? = nil) {
+        let settings = settings ?? AppSettings.load()
         excludedHostsText = settings.excludedHosts.joined(separator: "\n")
         hintCharacters = settings.hintCharacters
         scrollStep = settings.scrollStep

@@ -4,6 +4,9 @@ Vim-style keyboard navigation for Safari on macOS. Inspired by [Vimium](https://
 
 Press `j`/`k` to scroll, `f` to follow a link, `o` to open a URL or tab from a Spotlight-style palette, and `?` for the full cheatsheet.
 
+- [Architecture](docs/architecture.md) — processes, settings, content-script pipeline, module map
+- [Contributing](docs/contributing.md) — build, tests, file-size and DRY rules, adding commands
+
 ## Requirements
 
 - macOS 14 or later
@@ -11,7 +14,7 @@ Press `j`/`k` to scroll, `f` to follow a link, `o` to open a URL or tab from a S
 - [Xcode](https://developer.apple.com/xcode/) (to build the app)
 - [Node.js](https://nodejs.org) 20 or later (to bundle the extension scripts)
 
-Safari Keys is not on the App Store yet. You install it by building from source.
+Safari Keys is not on the App Store yet. You install it by building from source. A paid [Apple Developer](https://developer.apple.com/programs/) team signs a trusted local build; the same team is what you use later for App Store Connect.
 
 ## Install
 
@@ -30,9 +33,9 @@ npm run build
 
 1. Open `SafariKeys.xcodeproj` in Xcode.
 2. Select the **SafariKeys** scheme and **My Mac**.
-3. Signing:
-   - **With an Apple ID:** select your Personal Team on both the **SafariKeys** and **SafariKeys Extension** targets.
-   - **Without a team:** Xcode can ad-hoc sign it. Local development still works; Safari will treat the extension as unsigned.
+3. Signing (both **SafariKeys** and **SafariKeys Extension**):
+   - **Paid Developer Program team (this Mac):** Xcode → Settings → Accounts → add the Apple ID for that team. Then set **Team** on both targets. Xcode downloads an Apple Development certificate, registers the App Group `group.nl.wouterstolk.safari-keys`, and signs the app. Safari keeps the extension after quit — you do **not** need **Allow Unsigned Extensions**.
+   - **No team on this Mac:** Product → Run still works with ad-hoc signing, but Safari treats the extension as unsigned and hides it when Safari quits.
 4. Product → Run (⌘R). The Safari Keys app window should open.
 
 From the command line:
@@ -50,7 +53,7 @@ open DerivedData/Build/Products/Debug/SafariKeys.app
 Safari does not turn Web Extensions on by itself.
 
 1. Safari → Settings → **Advanced** → enable **Show features for web developers**.
-2. Safari → Develop → enable **Allow unsigned extensions** (needed for local / ad-hoc builds).
+2. If the build is ad-hoc (no Development Team): Safari → Develop → enable **Allow unsigned extensions**. Skip this when the app is signed with your Developer Program team.
 3. Safari → Settings → **Extensions** → enable **Safari Keys**.
 4. Grant website access. This is required or keys only work on a handful of sites:
    - In that same Extensions pane, set website access to **All Websites**, or
@@ -118,9 +121,11 @@ Safari Keys → Settings (or **Safari Keys → Settings…** from the menu bar):
 - **Smooth scrolling**
 - **Excluded sites** — one hostname per line; subdomains are included (`github.com` also matches `gist.github.com`)
 
-Settings are stored in the app. To sync them into the extension across launches, add your Apple ID in Xcode Signing, then enable the App Group `group.com.safari-keys.macos` on both targets. Without that group, the extension still runs with defaults.
+Settings live in the App Group `group.nl.wouterstolk.safari-keys` (both targets). That group is created when Xcode signs with your Developer Program team. Without a team, the native handler falls back to standard `UserDefaults` and the extension uses defaults or last-cached storage.
 
 ## Develop
+
+See [Contributing](docs/contributing.md) for layout, tests, and how to add a command.
 
 ```bash
 npm test          # Vitest (keymap, hints, scrolling, …)
@@ -128,16 +133,6 @@ npm run build     # Bundle JS into SafariKeys Extension/Resources
 ```
 
 After changing `extension/src/`, run `npm run build` and run the app again from Xcode (or `xcodebuild` as above). Reload the Safari tab so the new content script loads.
-
-Layout:
-
-```
-extension/src/                 Content and background scripts
-SafariKeys Extension/          Web Extension target + bundled Resources
-SafariKeys/                    SwiftUI companion app
-Shared/                        Settings model shared with the extension
-tests/                         Vitest + Swift tests
-```
 
 ## Troubleshooting
 
@@ -148,7 +143,7 @@ Safari granted the extension only some sites. Click the toolbar button → **Alw
 Safari caches the old content script until the tab reloads. Quit and reopen Safari Keys, then reload the page.
 
 **Safari says the extension is unsigned.**  
-Develop → **Allow unsigned extensions**, then enable Safari Keys again under Settings → Extensions.
+Either sign with your Developer Program team (Xcode Accounts → Team on both targets → Run), or Develop → **Allow unsigned extensions** and enable Safari Keys again under Settings → Extensions. Ad-hoc builds disappear when Safari quits.
 
 **Scrolling does nothing on LinkedIn (and similar apps).**  
 Reload the tab after updating. The scroller looks for nested overflow containers, not only the document.

@@ -1,3 +1,4 @@
+// Source of truth for keys. Keep HELP_SECTIONS in sync when adding a command.
 export const DEFAULT_MAPPINGS = {
   j: "scrollDown",
   k: "scrollUp",

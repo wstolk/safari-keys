@@ -8,7 +8,7 @@ struct ContentView: View {
     @State private var extensionEnabled = false
     @State private var statusLoaded = false
 
-    private let extensionIdentifier = "com.safari-keys.macos.extension"
+    private let extensionIdentifier = AppSettings.extensionBundleID
 
     var body: some View {
         VStack(alignment: .leading, spacing: 22) {
@@ -28,7 +28,7 @@ struct ContentView: View {
             statusCard
 
             Button("Open Safari Settings…") {
-                SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionIdentifier) { _ in }
+                Task { await openSafariSettings() }
             }
             .keyboardShortcut(.defaultAction)
 
@@ -43,7 +43,7 @@ struct ContentView: View {
         .task {
             await refreshState()
             if CommandLine.arguments.contains("--show-safari-settings") {
-                SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionIdentifier) { _ in }
+                await openSafariSettings()
             }
         }
         .onChange(of: scenePhase) { _, phase in
@@ -100,12 +100,12 @@ struct ContentView: View {
         }
     }
 
+    private func openSafariSettings() async {
+        try? await SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionIdentifier)
+    }
+
     private func refreshState() async {
-        let enabled: Bool = await withCheckedContinuation { continuation in
-            SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: extensionIdentifier) { state, _ in
-                continuation.resume(returning: state?.isEnabled ?? false)
-            }
-        }
+        let enabled = (try? await SFSafariExtensionManager.stateOfSafariExtension(withIdentifier: extensionIdentifier))?.isEnabled ?? false
         extensionEnabled = enabled
         statusLoaded = true
         store.save()

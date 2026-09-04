@@ -13,7 +13,9 @@ public struct AppSettings: Codable, Equatable, Sendable {
         smoothScroll: true
     )
 
-    public static let appGroupID = "group.com.safari-keys.macos"
+    public static let appBundleID = "nl.wouterstolk.safari-keys"
+    public static let extensionBundleID = "nl.wouterstolk.safari-keys.extension"
+    public static let appGroupID = "group.nl.wouterstolk.safari-keys"
     public static let storageKey = "settings"
 
     public init(
@@ -54,14 +56,16 @@ public struct AppSettings: Codable, Equatable, Sendable {
         try JSONEncoder().encode(self)
     }
 
-    public static func load(from defaults: UserDefaults = UserDefaults(suiteName: appGroupID) ?? .standard) -> AppSettings {
+    public static func load(from defaults: UserDefaults? = nil) -> AppSettings {
+        let defaults = defaults ?? UserDefaults(suiteName: appGroupID) ?? .standard
         guard let data = defaults.data(forKey: storageKey) else {
             return .default
         }
         return (try? decodeLenient(from: data)) ?? .default
     }
 
-    public func save(to defaults: UserDefaults = UserDefaults(suiteName: appGroupID) ?? .standard) {
+    public func save(to defaults: UserDefaults? = nil) {
+        let defaults = defaults ?? UserDefaults(suiteName: Self.appGroupID) ?? .standard
         defaults.set(try? encodeData(), forKey: Self.storageKey)
     }
 }

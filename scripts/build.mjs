@@ -1,0 +1,25 @@
+import * as esbuild from "esbuild";
+import { mkdir } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+const outdir = path.join(root, "SafariKeys Extension", "Resources");
+
+await mkdir(path.join(outdir, "styles"), { recursive: true });
+
+await esbuild.build({
+  absWorkingDir: root,
+  entryPoints: {
+    content: "extension/src/content.js",
+    background: "extension/src/background.js",
+  },
+  bundle: true,
+  format: "iife",
+  platform: "browser",
+  target: ["safari17"],
+  outdir,
+  logLevel: "info",
+});
+
+console.log("Built Safari Keys extension resources");

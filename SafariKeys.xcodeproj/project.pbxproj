@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C8FFC59304AA21B00CB559A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8FFC58304AA21B00CB559A /* AppDelegate.swift */; };
-		6C8FFC5D304AA21B00CB559A /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC5B304AA21B00CB559A /* Main.html */; };
-		6C8FFC5F304AA21B00CB559A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC5E304AA21B00CB559A /* Icon.png */; };
-		6C8FFC61304AA21B00CB559A /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC60304AA21B00CB559A /* Style.css */; };
-		6C8FFC63304AA21B00CB559A /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC62304AA21B00CB559A /* Script.js */; };
-		6C8FFC65304AA21B00CB559A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8FFC64304AA21B00CB559A /* ViewController.swift */; };
-		6C8FFC68304AA21B00CB559A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC66304AA21B00CB559A /* Main.storyboard */; };
 		6C8FFC6A304AA21C00CB559A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC69304AA21C00CB559A /* Assets.xcassets */; };
 		6C8FFC71304AA21C00CB559A /* SafariKeys Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6C8FFC70304AA21C00CB559A /* SafariKeys Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6C8FFC76304AA21C00CB559A /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8FFC75304AA21C00CB559A /* SafariWebExtensionHandler.swift */; };
@@ -23,7 +16,6 @@
 		6C8FFC8B304AA21C00CB559A /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC85304AA21C00CB559A /* manifest.json */; };
 		6C8FFC8C304AA21C00CB559A /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC86304AA21C00CB559A /* _locales */; };
 		6C8FFC8D304AA21C00CB559A /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 6C8FFC87304AA21C00CB559A /* content.js */; };
-
 		A20000000000000000000001 /* SafariKeysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000001 /* SafariKeysApp.swift */; };
 		A20000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* ContentView.swift */; };
 		A20000000000000000000003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000003 /* SettingsView.swift */; };
@@ -58,13 +50,6 @@
 
 /* Begin PBXFileReference section */
 		6C8FFC55304AA21B00CB559A /* SafariKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafariKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C8FFC58304AA21B00CB559A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6C8FFC5C304AA21B00CB559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
-		6C8FFC5E304AA21B00CB559A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		6C8FFC60304AA21B00CB559A /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		6C8FFC62304AA21B00CB559A /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		6C8FFC64304AA21B00CB559A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6C8FFC67304AA21B00CB559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C8FFC69304AA21C00CB559A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C8FFC6B304AA21C00CB559A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C8FFC70304AA21C00CB559A /* SafariKeys Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SafariKeys Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +61,6 @@
 		6C8FFC85304AA21C00CB559A /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		6C8FFC86304AA21C00CB559A /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
 		6C8FFC87304AA21C00CB559A /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
-
 		A10000000000000000000001 /* SafariKeysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariKeysApp.swift; sourceTree = "<group>"; };
 		A10000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A10000000000000000000003 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -135,17 +119,6 @@
 				6C8FFC6B304AA21C00CB559A /* Info.plist */,
 			);
 			path = SafariKeys;
-			sourceTree = "<group>";
-		};
-		6C8FFC5A304AA21B00CB559A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6C8FFC5B304AA21B00CB559A /* Main.html */,
-				6C8FFC5E304AA21B00CB559A /* Icon.png */,
-				6C8FFC60304AA21B00CB559A /* Style.css */,
-				6C8FFC62304AA21B00CB559A /* Script.js */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		6C8FFC74304AA21C00CB559A /* SafariKeys Extension */ = {
@@ -310,25 +283,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		6C8FFC5B304AA21B00CB559A /* Main.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C8FFC5C304AA21B00CB559A /* Base */,
-			);
-			name = Main.html;
-			sourceTree = "<group>";
-		};
-		6C8FFC66304AA21B00CB559A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C8FFC67304AA21B00CB559A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		6C8FFC78304AA21C00CB559A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -452,15 +406,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "SafariKeys Extension/SafariKeys Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q62PNQ8R8J;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SafariKeys Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Safari Keys";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Wouter Stolk";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -472,8 +428,9 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.safari-keys.macos.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.wouterstolk.safari-keys.extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -487,15 +444,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "SafariKeys Extension/SafariKeys Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q62PNQ8R8J;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SafariKeys Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Safari Keys";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Wouter Stolk";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -507,8 +466,9 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.safari-keys.macos.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.wouterstolk.safari-keys.extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -527,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q62PNQ8R8J;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
@@ -534,7 +495,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafariKeys/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Safari Keys";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Wouter Stolk";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,9 +509,9 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.safari-keys.macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.wouterstolk.safari-keys";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = NO;
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -568,6 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q62PNQ8R8J;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
@@ -575,7 +538,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafariKeys/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Safari Keys";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Wouter Stolk";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,9 +552,9 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.safari-keys.macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.wouterstolk.safari-keys";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = NO;
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;

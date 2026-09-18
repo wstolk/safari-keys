@@ -4,7 +4,9 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
-	<!-- After choosing a Development Team in Xcode, add:
-	     com.apple.security.application-groups = group.com.safari-keys.macos -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.nl.wouterstolk.safari-keys</string>
+	</array>
 </dict>
 </plist>
